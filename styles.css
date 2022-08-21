@@ -1,0 +1,20 @@
+body{
+    background-color: #fef8a0;
+    background-image: url(bee-705412_640.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top right;
+    font-size: 16px;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    font-size: 1.5rem;
+}
+
+div{
+    padding: 20px;
+}
