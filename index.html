@@ -1,155 +1,147 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="index.js"></script>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-    <title>Task List</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="./CSS/style.css">
+  <script src="./JS/taskmanager.js" defer></script>
+  <script src="./JS/index.js" defer></script>
+  <title>To do List</title>
 </head>
-
 <body>
-    <h1>Task List</h1>
-    <h2>New Task</h2>
-    <form class="needs-validation" novalidate>
-        <div class="form-row">
-            <div class="col-md-4 mb-3">
-                <label for="validationCustom01">Name</label>
-                <input type="text" class="form-control" id="validationCustom01" value="Name" required>
-                <div class="valid-feedback">
+  <div class="background-image"></div>
+
+  <div class="container">
+    <h1 class="title">Task Manager</h1>
+    <div class="row">
+      <div class="col">
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="col-12">
+        <div class="panel panel-default" id="jumbo">
+          <div class="jumbotron" id="task-form">
+            <h1>Add Task</h1>
+            <form>
+              <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" id="formName" placeholder="Name">
                 </div>
-            </div>
-
-            <div class="col-md-7 mb-2">
-                <label for="validationCustom02">Description</label>
-                <input type="text" class="form-control" id="validationCustom02" value=" " required>
-                <div class="valid-feedback">
-
+                <div class="col">
+                  <input type="text" class="form-control " id="formAssign" placeholder="Assigned To">
                 </div>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="col-md-7 mb-3">
-                <label for="validationCustom03">Assigned To</label>
-                <input type="text" class="form-control" id="validationCustom03" required>
-                <div class="invalid-feedback">
+              </div>
+              <div class="row">
+                <div class="col-12" id="description">
+                  <input type="text" class="form-control" id="formDesc" placeholder="Description" rows="3">
                 </div>
+              </div>
+              <div class="row" id="form-footer">
+                <div class="col">
+                  <input type="date" class="form-control" id="dueDate">
+                </div>
+                <div class="col">
+                  <select class="form-control" type="text" aria-placeholder="status">
+                    <option>To-do</option>
+                    <option>Done</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <button type="button" id="create-task" class="btn btn-primary btn-md float-right">Add Task</button>
+                </div>
+              </div>
+              <div id="alertMessage" style="display:none" class="alert alert-danger" role="alert">
+                Error Message
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" >
+       <div class="col-6" id="todo">
+        <h3 class="todo-head">To-do</h3>
+        <div class="container">
+          <div class="row"id="task-cards">
+            <div class="card col-12">
+              <div class="card-body">
+                <h5 class="card-title">lorem's Task</h5>
+                  <div class="nameDate">
+                    <small>Assigned to Lorem</small>
+                    <small>Due 06/14/22</small>
+                  </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam vero sed accusamus
+                  fugiat quod obcaecati eaque ea fuga, quos placeat vitae ducimus laudantium molestiae vel incidunt
+                  laboriosam quae enim quibusdam.</p>
+                <button type="button" id="delete" class="btn btn-primary btn-danger btn-sm">Delete</button>
+                <button type="button" id="done-btn" class="btn btn-primary btn-success btn-sm">Done</button>
+              </div>
             </div>
 
-            <div class="col-md-5 mb-3">
-                <label>
-                    Due Date:<br>
-                    <input type="date" name="bday">
-                </label>
+            <div class="card col-12">
+              <div class="card-body">
+                <h5 class="card-title">Lorem's taske</h5>
+                <div class="nameDate">
+                  <small>Assigned to lorem</small>
+                  <small>Due 06/22/22</small>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam vero sed accusamus
+                  fugiat quod obcaecati eaque ea fuga, quos placeat vitae ducimus laudantium molestiae vel incidunt
+                  laboriosam quae enim quibusdam.</p>
+                <button type="button" id="delete" class="btn btn-primary btn-danger btn-sm">Delete</button>
+                <button type="button" id="done-btn" class="btn btn-primary btn-success btn-sm">Done</button>
+              </div>
             </div>
+
+
+            <div class="card col-12">
+              <div class="card-body">
+                <h5 class="card-title">lorem's Task</h5>
+                <div class="nameDate">
+                  <small>Assigned to lorem</small>
+                  <small>Due 06/17/22</small>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam vero sed accusamus
+                  fugiat quod obcaecati eaque ea fuga, quos placeat vitae ducimus laudantium molestiae vel incidunt
+                  laboriosam quae enim quibusdam.</p>
+                <button type="button" id="delete" class="btn btn-primary btn-danger btn-sm">Delete</button>
+                <button type="button" id="done-btn" class="btn btn-primary btn-success btn-sm">Done</button>
+              </div>
+            </div>
+
+
+          </div>
         </div>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Add Task</button>
-    </form>
-    <br>
+      </div> 
 
-    <h2>Tasks</h2>
+      
+       <div class="col-6">
+        <h3 class="done">Done tasks</h3>
+        <div class="container">
+          <div class="row">
+            <div class="card col-12">
+              <div class="card-body">
+                <h5 class="card-title">Finished Task 1</h5>
+                <h6 class="card-subtitle"></h6>
+              </div>
+            </div>
 
 
-    <div class="card w-50">
-        <div class="card-body">
-            <h5 class="card-title">Task 1</h5>
-            <h6>Task 1 Description</h6>
-            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et saepe dolorem, voluptate
-                vitae eius dignissimos corrupti consectetur voluptates suscipit qui ullam sequi? Quisquam, odit? Dolorem
-                ducimus inventore provident optio in.</p>
-            <p>Due date: 08/22/22</p>
-            <span class="badge badge-primary">IN PROGRESS</span>
-            <a href="#" class="btn btn-primary">Delete</a>
+
+          </div>
         </div>
-    </div>
-    <br>
-    <div class="card w-50">
-        <div class="card-body">
-            <h5 class="card-title">Task 2</h5>
-            <h6>Task 2 Description</h6>
-            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam vero sed accusamus
-                fugiat quod obcaecati eaque ea fuga, quos placeat vitae ducimus laudantium molestiae vel incidunt
-                laboriosam quae enim quibusdam.</p>
-            <p>Due date: 08/22/22</p>
-            <span class="badge badge-success">DONE</span>
-            <a href="#" class="btn btn-primary">Delete</a>
-        </div>
-    </div>
-    <br>
-    <div class="card w-50">
-        <div class="card-body">
-            <h5 class="card-title">Task 3</h5>
-            <h6>Task 3 Description</h6>
-            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat dolor quaerat, fugiat
-                veniam minus, accusamus fugit accusantium velit eligendi nostrum quas nemo animi error dolores nobis
-                iure inventore recusandae cupiditate.</p>
-            <p>Due date: 08/22/22</p>
-            <span class="badge badge-warning">PENDING</span>
-            <a href="#" class="btn btn-primary">Delete</a>
-        </div>
-    </div>
-    <br>
-    <div class="card w-50">
-        <div class="card-body">
-            <h5 class="card-title">Task 4</h5>
-            <h6>Task 4 Description</h6>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, doloribus. Harum ea
-                autem, cum odit dolorem quibusdam. Enim neque ex doloremque voluptatum? Unde recusandae omnis neque
-                itaque vel eaque exercitationem.</p>
-            <p>Due date: 08/25/22</p>
-            <span class="badge badge-success">Done</span>
-            <a href="#" class="btn btn-primary">Button</a>
-        </div>
-    </div>
-    <br>
-    <div class="card w-50">
-        <div class="card-body">
-            <h5 class="card-title">Task 5</h5>
-            <h6>Task 5 Description</h6>
-            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo, repellat quae amet
-                delectus rerum autem officiis nesciunt a quis facere deleniti eum natus expedita iusto quia dolores
-                adipisci in laborum.</p>
-            <p>Due date: 08/27/22</p>
-            <span class="badge badge-primary">In Progress</span>
-            <a href="#" class="btn btn-primary">Button</a>
-        </div>
-    </div>
-
-    <!-- Adding form with submit (Task 4) -->
-    <div class="form-example">
-        <label for="task1">Enter your task: </label>
-        <input type="text" name="task1" id="task1" value="" required>
-    </div>
-    <div class="form-example">
-        <input type="submit" value="submit">
-    </div>
-    </form>
-
-
-
-
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-        crossorigin="anonymous"></script>
-
-    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-    -->
+        </div> 
+      </div>
+    </div>  
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
+
 
 </html>

@@ -1,6 +1,6 @@
 body{
-    background-color: #fef8a0;
-    background-image: url(bee-705412_640.png);
+    background-color:grey;
+    background-image: url("../marvin-meyer-SYTO3xs06fU-unsplash.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top right;
@@ -9,6 +9,7 @@ body{
 
 h1{
     text-align: center;
+    color: red;
 }
 
 h2{
@@ -18,3 +19,4 @@ h2{
 div{
     padding: 20px;
 }
+
